@@ -1,0 +1,18 @@
+<p>
+  <strong>Title:</strong>
+  <%= @feed.title %>
+</p>
+ 
+ <% @feed.products.each do |product| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= product.price %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= product.title %>
+  </p>
+
+  <%= link_to image_tag(product.image.url(:med)), product.image.url %>
+<% end %>
