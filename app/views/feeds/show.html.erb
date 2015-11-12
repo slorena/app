@@ -14,5 +14,19 @@
     <%= product.title %>
   </p>
 
-  <%= link_to image_tag(product.image.url(:med)), product.image.url %>
+  <%= link_to image_tag(product.image.url(:thumb)), product.image.url %>
 <% end %>
+
+ <div class="comment">
+		<%= render :partial=>@feed.reload.products %>
+</div>
+
+<div class='error'>
+</div>
+ 
+
+<p>
+<h3>Add a product:</h3>
+</p>
+	<%= render "products/form"%>
+

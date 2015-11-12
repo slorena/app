@@ -44,7 +44,7 @@ gem 'paperclip', '~> 3.0'
 #Use Bootstrap for design
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
-
+gem 'rmagick'
 
 gem 'protected_attributes'
 group :development, :test do

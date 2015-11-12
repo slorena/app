@@ -1,0 +1,32 @@
+.navbar-default .navbar-brand{
+	font-family: "Josefin";
+	font-weight: 700;
+	font-style: italic;
+	font-size: 20px;
+	color: #EC1F35;
+}
+
+.body-container{
+	padding: 100px 0;
+}
+
+table td,
+table th{
+	text-align: center;
+}
+
+.page-title{
+	margin-bottom: 50px;
+	border-bottom: 1px solid #ccc;
+}
+
+.page-title h1{
+	font-family: "Open Sans";
+	font-weight: 600px;
+	font-size: 25px;
+	color: #000;
+}
+
+.form-horizontal .form-group{
+	margin-left: 0;
+}

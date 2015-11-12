@@ -1,13 +1,29 @@
-<h1>Listing feeds</h1>
- 
-<table>
-  <tr>
-    <th>Title</th>
-  </tr>
- 
-  <% @feeds.each do |feed| %>
+<div class="page-title">
+  <h1>All feeds</h1>
+</div>
+
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Number of products</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <% @feeds.each do |feed| %>
     <tr>
       <td><%= feed.title %></td>
+      <td><%= feed.products.count %></td>
+
+      <td><%= link_to 'Edit feed', edit_feed_path(feed) %> </td>
+
+      <td><%= link_to 'Delete feed',  feed,  method: :delete, data: { confirm: 'Are you sure?' } %> </td>
     </tr>
   <% end %>
+    </tbody>
 </table>
+
+<%= link_to 'Back', feeds_path %>
+

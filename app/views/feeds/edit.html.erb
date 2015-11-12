@@ -1,0 +1,27 @@
+<div class="page-title">
+	<h1>Edit feed</h1>
+ </div>
+
+
+<%= render 'form' %>
+ 
+
+<div class="listing-products">
+
+<% @feed.products.each do |product| %>
+  <p>
+    <b>Title</b>
+    <%= product.title %>
+  </p>
+ 
+  <p>
+    <b>Price:</b>
+    <%= product.price %>
+  </p>
+<% end %>
+
+
+</div>
+
+<%= link_to 'Show', @feed %> |
+<%= link_to 'Back', feeds_path %>

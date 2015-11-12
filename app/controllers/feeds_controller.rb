@@ -4,6 +4,7 @@ class FeedsController < ApplicationController
 
 	def new
 	  @feed = Feed.new
+
 	end
 	 
 	def edit
@@ -20,6 +21,22 @@ class FeedsController < ApplicationController
 	  end
 	end
 
+	def update
+	  @feed = Feed.find(params[:id])
+	 
+	  respond_to do |format|
+	    if @feed.update_attributes(params[:feed])
+	      format.html  { redirect_to(@feed,
+	                    :notice => 'feed was successfully updated.') }
+	      format.json  { head :no_content }
+	    else
+	      format.html  { render :action => "edit" }
+	      format.json  { render :json => @feed.errors,
+	                    :status => :unprocessable_entity }
+	    end
+	  end
+	end
+
 
 	def show
     	@feed = Feed.find(params[:id])
@@ -28,6 +45,16 @@ class FeedsController < ApplicationController
   	def index
   		@feeds = Feed.order(created_at: :desc)
   	end
+
+	def destroy
+	  @feed = Feed.find(params[:id])
+	  @feed.destroy
+	 
+	  respond_to do |format|
+	    format.html { redirect_to feeds_url }
+	    format.json { head :no_content }
+	  end
+	end
 
 	private
 	def feed_params

@@ -1,0 +1,4 @@
+$('.error').html(' ');
+
+$('.comment').html("<%= escape_javascript(render :partial => @feed.reload.products) %>");
+

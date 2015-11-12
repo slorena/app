@@ -1,0 +1,16 @@
+<%= form_for([@feed, @feed.products.build],:remote => true) do |f| %>
+ 
+  <p>
+    <%= f.label :title, :id=>"comm"%>
+    <%= f.text_field :title, :id=>"name"%>
+  </p>
+  
+  <p>
+    <%= f.label :price, :id=>"comm" %>
+    <%= f.text_area :price, :id=>"content-comm"%>
+  </p>
+  <p>
+    <%= f.submit :class=>"btn btn-info"%>
+  </p>
+  
+  <% end %>
