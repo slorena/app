@@ -1,9 +1,30 @@
+<div class="row show-product">
 
- <p>
-    <strong>Name: </strong>
+  <div class="col-lg-2">
+    <%= link_to image_tag(product.image.url(:thumb)), product.image.url%>
+  </div>
+
+ <div class='col-lg-9'>
+  <p>
+    <strong>Title:</strong>
     <%= product.title %>
   </p>
+
+   <p>
+    <strong>Campaign name:</strong>
+    <%= product.campaign %>
+  </p>
+
+ 
   <p>
-    <strong>product: </strong>
+    <strong>Price:</strong>
     <%= product.price %>
   </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= product.description %>
+  </p>
+
+  </div>
+  </div>

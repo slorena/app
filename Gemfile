@@ -40,10 +40,12 @@ gem 'nokogiri'
 
 #Use papeclip for upload files
 gem 'paperclip', '~> 3.0'
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
 
 #Use Bootstrap for design
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+
 gem 'rmagick'
 
 gem 'protected_attributes'

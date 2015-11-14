@@ -1,16 +1,35 @@
-<%= form_for([@feed, @feed.products.build],:remote => true) do |f| %>
+<%= form_for([@feed, @feed.products.build],:remote => true, :html => { :class => 'form-horizontal' } ) do |f| %>
  
-  <p>
-    <%= f.label :title, :id=>"comm"%>
-    <%= f.text_field :title, :id=>"name"%>
-  </p>
-  
-  <p>
-    <%= f.label :price, :id=>"comm" %>
-    <%= f.text_area :price, :id=>"content-comm"%>
-  </p>
-  <p>
-    <%= f.submit :class=>"btn btn-info"%>
-  </p>
+  <div class="form-group">
+    <%= f.label :title, :class => 'form-label' %>
+    <div class="forms">
+      <%= f.text_field :title%>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :Campaign_name, :class => 'form-label' %>
+    <div class="control">
+      <%= f.text_field :campaign %>
+    </div>
+  </div>
+
+   <div class="form-group">
+    <%= f.label :price, :class => 'form-label' %>
+    <div class="control">
+      <%= f.text_field :price %>
+    </div>
+  </div>
+
+   <div class="form-group">
+    <%= f.label :description, :class => 'form-label' %>
+    <div class="control">
+      <%= f.text_area :description, :row => 20, :cols => 50 %>
+    </div>
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-success' %>
+  </div>
   
   <% end %>

@@ -1,6 +1,7 @@
 require 'open-uri'
 require 'uri'
 require 'paperclip'
+
 class Feed < ActiveRecord::Base
 	has_many :products, :dependent => :destroy
 
@@ -40,9 +41,8 @@ class Feed < ActiveRecord::Base
 
 		        product.campaign_name = node.text.to_s if node.name.eql? 'campaign name'
 		        product.description = node.text.to_s if node.name.eql? 'description'
-
-		        product.image = URL.parse(node.text).open if node.name.eql? 'image urls'
-		       
+ 
+		       product.picture_from_url(node.text.to_s) if node.name.eql? 'image_urls'
 
 		      end
 		     	self.products << product

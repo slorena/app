@@ -1,23 +1,9 @@
-<p>
-  <strong>Title:</strong>
+<h2 class="title">
   <%= @feed.title %>
-</p>
- 
- <% @feed.products.each do |product| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= product.price %>
-  </p>
- 
-  <p>
-    <strong>Comment:</strong>
-    <%= product.title %>
-  </p>
+</h2>
 
-  <%= link_to image_tag(product.image.url(:thumb)), product.image.url %>
-<% end %>
 
- <div class="comment">
+ <div class="products">
 		<%= render :partial=>@feed.reload.products %>
 </div>
 
@@ -25,8 +11,7 @@
 </div>
  
 
-<p>
 <h3>Add a product:</h3>
-</p>
-	<%= render "products/form"%>
+
+<%= render "products/form"%>
 
