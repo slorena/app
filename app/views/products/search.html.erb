@@ -1,10 +1,5 @@
-
-<div id="search_field">
-
-</div>
-
 <%= form_tag '/products/search', method: :get do %>
-<%= select_tag "search_by", options_for_select([ "Title", "Price" ]) %>
+Search by <%= select_tag "search_by", options_for_select([ "Title", "Price" ]) %>
 <%= text_field_tag :search, params[:search], placeholder: "Search" %>
 
 <%= submit_tag "Search" %>

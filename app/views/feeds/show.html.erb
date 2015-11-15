@@ -1,35 +1,33 @@
 <h2 class="title">
-  <%= @feed.title %>
+<%= @feed.title %>
 </h2>
 
 <%= link_to 'Add new product', {:controller =>  "products", :action  => "new", :feed_id => @feed.id }, :class => "btn btn-success"%>
 
 
 <div class="slider">
- <% @products.each do |product| %>
-		<div class="slider-details">
-		<%= link_to image_tag(product.image.url(:thumb)), product.image.url%>
+  <% @products.each do |product| %>
+  <div class="slider-details">
+    <%= link_to image_tag(product.image.url(:thumb)), product.image.url%>
 
-		<%= link_to '',edit_feed_product_path(@feed, product), :class => "glyphicon glyphicon-pencil" %>
+    <%= link_to '',edit_feed_product_path(@feed, product), :class => "glyphicon glyphicon-pencil" %>
 
-	  	<%= link_to '', feed_product_path(@feed, product),
-	               method: :delete,
-	               data: { confirm: 'Are you sure?' } , :class => "glyphicon glyphicon-trash" %>
-	    </div>
- <% end %>
- </div>
+    <%= link_to '', feed_product_path(@feed, product),
+    method: :delete,
+    data: { confirm: 'Are you sure?' } , :class => "glyphicon glyphicon-trash" %>
+    </div>
+  <% end %>
+</div>
+
 <p class="sort_links">
-Sort by: 
-<%= sortable_column "Title", :column => "title" %>
-<%= sortable_column "Price", :column => "price" %>
-<%= sortable_column "Created date", :column => "created_at" %>
+  Sort by: 
+  <%= sortable_column "Title", :column => "title" %>
+  <%= sortable_column "Price", :column => "price" %>
+  <%= sortable_column "Created date", :column => "created_at" %>
 <p>
 
-
-
-
- <div class="products">
-	<%= render @products %>
+<div class="products">
+<%= render @products %>
 </div>
 
 
