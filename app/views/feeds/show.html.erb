@@ -2,16 +2,12 @@
   <%= @feed.title %>
 </h2>
 
+<%= link_to 'Add new product', controller: "products", action: "new", :feed_id => @feed.id %>
 
  <div class="products">
-		<%= render :partial=>@feed.reload.products %>
+		<%= render @feed.reload.products %>
 </div>
 
-<div class='error'>
-</div>
- 
 
-<h3>Add a product:</h3>
 
-<%= render "products/form"%>
 

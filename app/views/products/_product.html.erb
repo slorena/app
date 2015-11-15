@@ -26,5 +26,13 @@
     <%= product.description %>
   </p>
 
+	<p>
+	<%= link_to 'Edit product',edit_feed_product_path(@feed, product) %>
+
+	  <%= link_to 'Delete product', feed_product_path(@feed, product),
+	               method: :delete,
+	               data: { confirm: 'Are you sure?' } %>
+	</p>
+
   </div>
   </div>

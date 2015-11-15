@@ -24,7 +24,7 @@
       <td><%= feed.title %></td>
       <td><%= feed.products.count %></td>
 
-      <td><%= link_to 'Edit feed', edit_feed_path(feed) %> </td>
+      <td><%= link_to 'Show feed', feed_path(feed) %> </td>
 
       <td><%= link_to 'Delete feed',  feed,  method: :delete, data: { confirm: 'Are you sure?' } %> </td>
     </tr>

@@ -46,7 +46,7 @@ gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
-gem 'rmagick'
+gem 'mandrill-rails'
 
 gem 'protected_attributes'
 group :development, :test do
