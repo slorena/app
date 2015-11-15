@@ -2,10 +2,19 @@
   <%= @feed.title %>
 </h2>
 
-<%= link_to 'Add new product', controller: "products", action: "new", :feed_id => @feed.id %>
+<%= link_to 'Add new product', {:controller =>  "products", :action  => "new", :feed_id => @feed.id }, :class => "btn btn-success"%>
+
+
+
+<p class="sort_links">
+Sort by: 
+<%= sortable_column "Title", :column => "title" %>
+<%= sortable_column "Price", :column => "price" %>
+<%= sortable_column "Created date", :column => "created_at" %>
+<p>
 
  <div class="products">
-		<%= render @feed.reload.products %>
+	<%= render @products %>
 </div>
 
 

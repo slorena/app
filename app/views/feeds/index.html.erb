@@ -8,8 +8,6 @@
 
 <% else %>
 
-<%= link_to 'Create a new feed', new_feed_path %> 
-
 <table class="table table-hover">
     <thead>
       <tr>
@@ -24,9 +22,9 @@
       <td><%= feed.title %></td>
       <td><%= feed.products.count %></td>
 
-      <td><%= link_to 'Show feed', feed_path(feed) %> </td>
+      <td><%= link_to 'Show feed', feed_path(feed), :class => "btn btn-primary" %> </td>
 
-      <td><%= link_to 'Delete feed',  feed,  method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+      <td><%= link_to 'Delete feed',  feed,  method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger"%> </td>
     </tr>
   <% end %>
     </tbody>

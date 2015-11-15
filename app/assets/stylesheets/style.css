@@ -58,3 +58,18 @@ h2.title{
 .show-product img{
 	border: 1px solid #000;
 }
+
+.sort_links{
+	padding: 20px 0;
+	font-size: 15px;
+}
+.SortableColumnLink{
+	display: inline-block;
+	font-size: 20px;
+	margin: 0 10px;
+	color: #000;	
+}
+
+.SortableColumnLink:hover{
+	color: #000;
+}

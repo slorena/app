@@ -2,6 +2,8 @@ class FeedsController < ApplicationController
 	before_filter :authenticate_user!
 	respond_to :js
 
+	handles_sortable_columns
+
 	def new
 	  @feed = Feed.new
 
@@ -20,11 +22,11 @@ class FeedsController < ApplicationController
 	end
 
 
-
-
 	def show
     	@feed = Feed.find(params[:id])
-     	@product = @feed.products.build
+     	
+     	order = sortable_column_order
+  		@products = @feed.products.order(order)
   	end
 
   	def index

@@ -46,6 +46,9 @@ gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
+
+gem "handles_sortable_columns"
+
 gem 'mandrill-rails'
 
 gem 'protected_attributes'

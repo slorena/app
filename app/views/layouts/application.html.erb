@@ -22,10 +22,13 @@
         <div id="navbarCollapse" class="collapse navbar-collapse">
         	<ul class="nav navbar-nav navbar-right">
                 <% if user_signed_in? %>
-                    <li><%= link_to('Iesire', destroy_user_session_path, :method=>'delete', :class => "line1_p") %> </li>
+                    <li><%= link_to('Create feed', new_feed_path, :class => "line1_p") %> </li>
+                    <li><%= link_to('Search product', '/products/search', :class => "line1_p") %> </li>
+                    <li><%= link_to('All feeds', feeds_path, :class => "line1_p") %> </li>
+                    <li><%= link_to('Logout', destroy_user_session_path, :method=>'delete', :class => "line1_p") %> </li>
                 <%else%>
-                    <li><%= link_to('Logare', new_user_session_path, :class => "line1_p") %> </li>
-                    <li><%= link_to('Inregistrare', new_user_registration_path, :class => "line1_p") %> </li>
+                    <li><%= link_to('Login', new_user_session_path, :class => "line1_p") %> </li>
+                    <li><%= link_to('Register', new_user_registration_path, :class => "line1_p") %> </li>
 
                 <%end%> 
             </ul>

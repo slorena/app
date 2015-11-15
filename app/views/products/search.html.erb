@@ -1,3 +1,17 @@
+
+<div id="search_field">
+
+</div>
+
+<%= form_tag '/products/search', method: :get do %>
+<%= select_tag "search_by", options_for_select([ "Title", "Price" ]) %>
+<%= text_field_tag :search, params[:search], placeholder: "Search" %>
+
+<%= submit_tag "Search" %>
+
+<% end %>
+
+ <% @products.each do |product| %>
 <div class="row show-product">
 
   <div class="col-lg-2">
@@ -26,13 +40,7 @@
     <%= product.description %>
   </p>
 
-	<p>
-	<%= link_to 'Edit product',edit_feed_product_path(@feed, product), :class => "btn btn-primary" %>
-
-	  <%= link_to 'Delete product', feed_product_path(@feed, product),
-	               method: :delete,
-	               data: { confirm: 'Are you sure?' } , :class => "btn btn-danger" %>
-	</p>
-
   </div>
   </div>
+
+<% end %>

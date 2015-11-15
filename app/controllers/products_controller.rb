@@ -58,7 +58,16 @@ class ProductsController < ApplicationController
     redirect_to feed_path(@feed)
   end
 
- 
+  def search
+    if(params[:search] and params[:search_by])
+      
+      column_name = params[:search_by].to_s + " LIKE ?"
+      @products =  Product.where(column_name, "%#{params[:search]}%")
+    else
+      @products = Product.all
+    end
+  end
+  
   private
     def product_params
       params.require(:product).permit(:title, :price, :campaign, :image, :description,:feed_id)
