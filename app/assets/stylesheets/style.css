@@ -73,3 +73,10 @@ h2.title{
 .SortableColumnLink:hover{
 	color: #000;
 }
+
+.slider-details .owl-item{
+	width: auto!important;
+}
+.slider{
+	margin: 30px 0 20px;
+}

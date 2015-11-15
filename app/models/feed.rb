@@ -11,6 +11,8 @@ class Feed < ActiveRecord::Base
   attr_accessible :title, :file, :file_file_name
   accepts_nested_attributes_for :products
 
+  validates :title, :file, presence: true
+
   before_save :parse_file
 
   def parse_file
@@ -40,7 +42,7 @@ class Feed < ActiveRecord::Base
 
                   product.price = node.text if node.name.eql? 'price'
 
-                  product.campaign_name = node.text.to_s if node.name.eql? 'campaign name'
+                  product.campaign = node.text.to_s if node.name.eql? 'campaign_name'
                   product.description = node.text.to_s if node.name.eql? 'description'
 
                   product.picture_from_url(node.text.to_s) if node.name.eql? 'image_urls'

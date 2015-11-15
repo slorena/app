@@ -46,10 +46,13 @@ gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
+gem 'will_paginate', '~> 3.0'
 
 gem "handles_sortable_columns"
 
 gem 'mandrill-rails'
+
+gem 'owlcarousel-rails'
 
 gem 'protected_attributes'
 group :development, :test do

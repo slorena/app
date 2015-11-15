@@ -4,6 +4,7 @@
 
 <% if @feeds.length == 0%>
 
+  <p> No feed to display. </p>
   <%= link_to 'Create feed', new_feed_path, :class => "btn btn-success"  %> 
 
 <% else %>

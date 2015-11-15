@@ -2,6 +2,7 @@
 class Product < ActiveRecord::Base
   
   belongs_to :feeds
+
   has_attached_file :image, :path => ":rails_root/public/system/:attachment/:id/:basename_:style.:extension",
     :url => "/system/:attachment/:id/:basename_:style.:extension",
     :styles => {
@@ -18,6 +19,7 @@ class Product < ActiveRecord::Base
     }
 
   attr_accessible :feed_id, :title, :price, :campaign, :description, :image
+  validates :title, :price, :description, presence: :true
 
   def picture_from_url(url)
     self.image = URI.parse(url)
